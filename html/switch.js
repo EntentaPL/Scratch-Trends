@@ -26,7 +26,7 @@ $("#switcher").on("click", function change() {
 })
 
 $(".refer").on("click", function(){
-    chrome.tabs.create({active: true, url: "http://github.com/"});
+    chrome.tabs.create({active: true, url: "https://github.com/EntentaPL/Scratch-Trends/"});
 })
 
 $("#switcher").click();
