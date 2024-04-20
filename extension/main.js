@@ -70,9 +70,10 @@ if (lang == "pl" && category == "Wszystko"){
     options.append('<option value="polish_trends">Polskie trendy</option>')
     $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
 
-    setInterval(function(){
+    let repeat = setInterval(function(){
         if (options.val() == "polish_trends"){
             replace_projects();
+            clearInterval(repeat);
         }
     } , 0)
 
