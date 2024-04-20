@@ -1,10 +1,8 @@
 async function _projects(offset){
 
-    if (offset == 16) offset=offset-1;
-
     const proxy = 'https://corsproxy.io/?';
     const projects = [];
-    const url = proxy + 'https://api.scratch.mit.edu/studios/34645019/projects?limit=16&offset=' + (parseInt(offset)+3);
+    const url = proxy + 'https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset;
 
     let src = await fetch(url);
     src = await src.json();
@@ -28,63 +26,61 @@ async function _projects(offset){
 
 async function replace_projects(){
 
-    change = $("#projectBox .flex-row div").length;
-    status = parseInt(status) + 16;
-    const projects = await _projects(status);
+    const projects =(await _projects(3)).concat(await _projects(40));
 
-    for (let project of projects){
+    const grid = $("#projectBox .grid .flex-row").empty();
 
-        $(document).ready(function(){
+    for (let project of projects.reverse()){
 
-            let block = $(".thumbnail.project").eq(parseInt(status)+parseInt(projects.indexOf(project)));
+        let html = $('<div class="thumbnail project"></div>');
 
-            let thumbnail = block.find(".thumbnail-image");
+        let thumbnail_link = $("<a></a>").addClass("thumbnail-image").attr("href", "/projects/"+project["id"]);
+        let thumbnail_img = $("<img>").attr("src", project["image"]).attr("alt", "");
+        html.append(thumbnail_link.append(thumbnail_img));
 
-            thumbnail.find("img").attr("src", project["image"]);
-            thumbnail.attr("href", "/projects/"+project["id"]);
+        let info = $('<div class="thumbnail-info"></div>');
 
-            let author = block.find(".thumbnail-info");
+        let author_link = $("<a></a>").addClass("creator-image").attr("href", "/users/"+project["author"]["author_name"]);
+        let author_img = $("<img>").attr("src", project["author"]["author_image"]).attr("alt", project["author"]["author_name"]);
+        info.append(author_link.append(author_img));
 
-            author.find(".creator-image img").attr("src", project["author"]["author_image"]);
-            author.find(".creator-image ").attr("href", "/users/"+project["author"]["author_name"]);
-            author.find(".thumbnail-title a").attr("href", "/projects/"+project["id"]).attr("title", project["title"]).text(project["title"]);
-            author.find(".thumbnail-title .thumbnail-creator a").attr("href", "/users/"+project["author"]["author_name"]).attr("title", project["author"]["author_name"]).text(project["author"]["author_name"]);
 
-        });
+        let title = $('<div class="thumbnail-title"></div>');
 
+        let title_link = $("<a></a>").attr("title", project["title"]).attr("href", "/projects/"+project["id"]).text(project["title"]);
+        let title_author = $('<div class="thumbnail-creator"></div>').append($('<a></a>').attr("href", "/users/"+project["author"]["author_name"]).text(project["author"]["author_name"]));
+        info.append(title.append(title_link).append(title_author));
+        html.append(info);   
+
+        grid.prepend(html)
     };
 }
 
-function run() {
+
     
-    const lang = $("#frc-language-1088").val();
-    const category = $(".sort-mode .form-control").val();
-    const len = $("#projectBox .grid .flex-row div").length;
+const lang = $("#frc-language-1088").val();
+const category = $(".sort-controls .active span:first").text()
+const options = $(".sort-mode #frc-sort-1088");
 
-    if (lang == "pl" && category == "trending" && len > 0){
-        
-        clearInterval(check);
-        replace_projects();
-        change = $("#projectBox .flex-row div").length;
+console.log(category);
 
-        setInterval(function(){
-            let grid = $("#projectBox .flex-row div").length;
-            if (grid != change){
-                replace_projects()
-            }
-        }, 0);
-        
-    }
+if (lang == "pl" && category == "Wszystko"){
 
+    $("#projectBox .button").remove();
+    options.append('<option value="polish_trends">Polskie trendy</option>')
+    $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
+
+    setInterval(function(){
+        if (options.val() == "polish_trends"){
+            replace_projects();
+        }
+    } , 0)
 
 }
 
-var change;
-var status=-16;
-const check = setInterval(run, 0)
 
 /* 
-
+'<a href="/explore/projects/tutorials/"><li class=""><span>Samouczki</span></li></a>'
 ------------------> WARUNKI DZIAŁANIA :: nr 1 <------------------
 
 

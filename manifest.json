@@ -14,10 +14,9 @@
         {
           "js": [ "modules/jquery.min.js", "extension/main.js"],
           "matches": [
-          "https://scratch.mit.edu/explore/projects/all/trending",
-          "https://scratch.mit.edu/explore/projects/all/trending/",
-          "https://scratch.mit.edu/explore/projects/all",
-          "https://scratch.mit.edu/explore/projects/all/"
+          "https://scratch.mit.edu/explore/projects",
+          "https://scratch.mit.edu/explore/projects/",
+          "https://scratch.mit.edu/explore/projects/*"
         ],
           "run_at": "document_end"
         }
