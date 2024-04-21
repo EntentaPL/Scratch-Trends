@@ -62,8 +62,6 @@ const lang = $("#frc-language-1088").val();
 const category = $(".sort-controls .active span:first").text()
 const options = $(".sort-mode #frc-sort-1088");
 
-console.log(category);
-
 if (lang == "pl" && category == "Wszystko"){
 
     $("#projectBox .button").remove();
