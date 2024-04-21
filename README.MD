@@ -23,7 +23,7 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 
 ### 2. Zainstaluj rozszerzenie
 
-1. Kiedy już pobrałeś rozszerzenie i posiadasz uzyskany katalog, możesz przejść do instacji rozszerznia. W tym celu otwórz stronę do zarządzania rozszerzeniami <a href="chrome://extensions/">chrome://extensions</a>
+1. Kiedy już pobrałeś rozszerzenie i posiadasz uzyskany katalog, możesz przejść do instacji rozszerznia. W tym celu otwórz stronę do zarządzania rozszerzeniami [chrome://extensions](chrome://extensions)
 
 <img src="docs/extensions.png" width=100% height=100% style="margin:10px">
 
@@ -33,4 +33,4 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 
 4. W menu do wyboru katalogu wybierz ten, który uzyskałeś podczas etapu pobierania.
 
-5. Powinieneś teraz zobaczyć nowe pole z tytułem "Scratch Trends". To oznacza, że rozszerzenie zostały zainstalowane pomyślnie.
+5. Powinieneś teraz zobaczyć nowe pole z tytułem "Scratch Trends". To oznacza, że rozszerzenie zostało zainstalowane pomyślnie.
