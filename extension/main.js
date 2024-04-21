@@ -1,6 +1,6 @@
 async function _projects(offset){
 
-    const proxy = 'https://api.allorigins.win/raw?url=';
+    const proxy = 'https://corsproxy.io/?';
     const projects = [];
     const url = proxy + encodeURIComponent('https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset);
 
