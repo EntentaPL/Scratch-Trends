@@ -1,8 +1,9 @@
 async function _projects(offset){
 
-    const proxy = 'https://corsproxy.io/?';
+    const proxy = 'https://api.allorigins.win/raw?url=';
     const projects = [];
-    const url = proxy + 'https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset;
+    const url = proxy + encodeURIComponent('https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset);
+
 
     let src = await fetch(url);
     src = await src.json();
@@ -27,7 +28,6 @@ async function _projects(offset){
 async function replace_projects(){
 
     const projects =(await _projects(3)).concat(await _projects(40));
-
     const grid = $("#projectBox .grid .flex-row").empty();
 
     for (let project of projects.reverse()){
@@ -70,12 +70,7 @@ if (lang == "pl" && category == "Wszystko"){
     options.append('<option value="polish_trends">Polskie trendy</option>')
     $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
 
-    let repeat = setInterval(function(){
-        if (options.val() == "polish_trends"){
-            replace_projects();
-            clearInterval(repeat);
-        }
-    } , 0)
+    options.on("change", replace_projects)
 
 }
 
