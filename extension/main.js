@@ -1,6 +1,6 @@
 async function _projects(offset){
 
-    const proxy = 'https://api.allorigins.win/raw?url=';
+    const proxy = 'https://corsproxy.io/?';
     const projects = [];
     const url = proxy + encodeURIComponent('https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset);
 
@@ -61,8 +61,6 @@ async function replace_projects(){
 const lang = $("#frc-language-1088").val();
 const category = $(".sort-controls .active span:first").text()
 const options = $(".sort-mode #frc-sort-1088");
-
-console.log(category);
 
 if (lang == "pl" && category == "Wszystko"){
 
