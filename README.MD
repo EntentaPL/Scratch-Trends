@@ -2,8 +2,8 @@
 
 
 <div style="display: flex; align-items: center;">
-<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_256x256.png" width=50px height=50px style="position:relative;top:10px;"> 
-<div style="position:relative;top:20px;">Chrome</div>
+<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_256x256.png" width=50px height=50px> 
+<div style="position:relative;top:10px;">Chrome</div>
 </div>
 
 ###### Ta sekcja dotyczy również przeglądarek opartych na silniku Chromium (np. Microsoft Edge)
