@@ -2,7 +2,7 @@
 
 
 <div style="display: flex; align-items: center;">
-    <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_256x256.png" width=50px height=50px style="padding-bottom:20px;"> 
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_256x256.png" width=50px height=50px> 
     Chrome
 </div>
 
