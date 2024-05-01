@@ -1,32 +1,40 @@
 {
-    "manifest_version": 3,
-    "name": "Scratch Trends",
-    "description":"Rozszerzenie przywracające polskie trendy na stronę Scratch",
-    "version": "1.0.0",
-    "icons":{
-      "16":"extension/favicon.jpg",
-      "32":"extension/favicon.jpg",
-      "48":"extension/favicon.jpg",
-      "128":"extension/favicon.jpg"
-    },
+  "manifest_version": 3,
+  "name": "Scratch Trends",
+  "description": "Rozszerzenie przywracające polskie trendy na stronę Scratch",
+  "version": "1.0",
+  "icons": {
+    "16": "extension/favicon.jpg",
+    "32": "extension/favicon.jpg",
+    "48": "extension/favicon.jpg",
+    "128": "extension/favicon.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://scratch.mit.edu/explore/projects",
+        "https://scratch.mit.edu/explore/projects/*"
+      ],
+      "js": [
+        "modules/jquery.min.js",
+        "extension/main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "html/menu.html"
+  },
 
-    "content_scripts": [
-        {
-          "js": [ "modules/jquery.min.js", "extension/main.js"],
-          "matches": [
-          "https://scratch.mit.edu/explore/projects",
-          "https://scratch.mit.edu/explore/projects/",
-          "https://scratch.mit.edu/explore/projects/*"
-        ],
-          "run_at": "document_end"
-        }
-    ],
 
-    "action":{
-      "default_popup": "html/menu.html"
-    },
-
-    "permissions":["storage", "activeTab"]
-
-    
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "scratch3.trends.com"
+    }
+  }
+  
 }
