@@ -28,13 +28,6 @@
   ],
   "action": {
     "default_popup": "html/menu.html"
-  },
-
-
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "scratch3.trends.com"
-    }
   }
   
 }
