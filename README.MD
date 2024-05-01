@@ -40,7 +40,7 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 <br>
 
 
-<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png" style="vertical-align:middle;"/> **Firefox**
+<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png" style="vertical-align:bottom;"/> **Firefox**
 
 ### 1. Zainstaluj rozszerzenie z addons.mozilla.org
 
