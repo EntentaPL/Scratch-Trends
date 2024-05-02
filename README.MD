@@ -48,4 +48,4 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 wejdź [udaj się na tę stronę](https://addons.mozilla.org/en-US/firefox/addon/scratch-trends/) i kliknij niebieski przycisk **dodaj do Firefox** . Zaakceptuj również
 przycisk **Dodaj** w okienku, które następnie Ci wyskoczy.
 
-2. Powinieneś teraz zobaczyć nowe pole z tytułem "Scratch Trends". To oznacza, że rozszerzenie zostało zainstalowane pomyślnie.
+2. W ustawieniach rozszerzenia (znajdź rozszerzenie na stronie [about:addons]()) wybierz opcję zezwalającą na dostęp do danych na stronie **https://scratch.mit.edu**
