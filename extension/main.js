@@ -1,25 +1,26 @@
 async function _projects(offset){
 
-    const proxy = 'https://test.cors.workers.dev/?';
+
     const projects = [];
-    const url = proxy + encodeURIComponent('https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset='+offset);
-
-
-    let src = await fetch(url);
+    let src = await fetch("https://api.scratch.mit.edu/studios/34645019/projects?limit=40&offset="+offset);
     src = await src.json();
 
-    for (let i in src){
+    src.forEach(function (project) {
+
         projects.push({
-            "title":src[i]["title"],
-            "id":(src[i]["id"]).toString(),
+            "title":project["title"],
+            "id":(project["id"]).toString(),
             "author":{
-                "author_name":src[i]["username"],
-                "author_id":src[i]["creator_id"],
-                "author_image":src[i]["avatar"]["32x32"]
+                "author_name":project["username"],
+                "author_id":project["creator_id"],
+                "author_image":project["avatar"]["32x32"]
             },
-            "image":src[i]["image"]
+            "image":project["image"]
         });
-    }
+
+    })
+
+
 
     return projects;
 
@@ -71,29 +72,3 @@ if (lang == "pl" && category == "Wszystko"){
     options.on("change", replace_projects)
 
 }
-
-
-/* 
-'<a href="/explore/projects/tutorials/"><li class=""><span>Samouczki</span></li></a>'
-------------------> WARUNKI DZIAŁANIA :: nr 1 <------------------
-
-
-Całe rozszerzenie będzie działać tylko przy trendach ustawionych na POLSKIE
-
-Alternatywnie można pobrać ciasteczko "scratchlanguage" :
-
-```` const lang = (document.cookie).split("; scratchlanguage=")[1]; ````
-
-Jednak ten plik cookie nie zawsze jest ustawiony, mimo że wybrany jest język polski
-
-------------------> WARUNKI DZIAŁANIA :: nr 2 <------------------
-
-
-Rozszerzenie ma funkcjonować na TRENDACH, a więc dodatkowo musi zostać wybrana kategoria TRENDY
-
-------------------> WARUNKI DZIAŁANIA :: nr 3 <------------------
-
-
-Rozszerzenie zanim się uruchomi musi zweryfikować, czy projekty zostały już załadowane
-
-*/

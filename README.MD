@@ -1,7 +1,7 @@
 # Instalacja rozszerzenia
 
 
-<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png" style="vertical-align:middle;"/> **Chrome**
+## Chrome
 
 ###### Ta sekcja dotyczy również przeglądarek opartych na silniku Chromium (np. Microsoft Edge)
 
@@ -39,8 +39,7 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 
 <br>
 
-
-<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png" style="vertical-align:bottom;"/> **Firefox**
+## Firefox
 
 ### 1. Zainstaluj rozszerzenie z addons.mozilla.org
 
