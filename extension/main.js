@@ -57,7 +57,6 @@ async function replace_projects(){
     };
 }
 
-
     
 const lang = $("#frc-language-1088").val();
 const category = $(".sort-controls .active span:first").text()
@@ -66,9 +65,9 @@ const options = $(".sort-mode #frc-sort-1088");
 if (lang == "pl" && category == "Wszystko"){
 
     $("#projectBox .button").remove();
-    options.append('<option value="polish_trends">Polskie trendy</option>')
     $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
 
+    options.append('<option value="polish_trends">Polskie trendy</option>')
     options.on("change", replace_projects)
 
 }
