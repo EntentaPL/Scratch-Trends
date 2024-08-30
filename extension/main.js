@@ -28,6 +28,8 @@ async function _projects(offset){
 
 async function replace_projects(){
 
+    
+
     const projects =(await _projects(3)).concat(await _projects(40));
     const grid = $("#projectBox .grid .flex-row").empty();
 
@@ -55,19 +57,39 @@ async function replace_projects(){
 
         grid.prepend(html)
     };
+    $("#projectBox .button").remove();
+    $(".sort-mode #frc-sort-1088").val("polish_trends");
 }
 
-    
+
 const lang = $("#frc-language-1088").val();
 const category = $(".sort-controls .active span:first").text()
 const options = $(".sort-mode #frc-sort-1088");
 
-if (lang == "pl" && category == "Wszystko"){
+chrome.storage.local.get(["force_pltrends", "default"], function (value) {
 
-    $("#projectBox .button").remove();
-    $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
+    if (value.force_pltrends == "on") {
+        
+        $(".sort-mode #frc-sort-1088 option[value='trending']").text("Polskie trendy").attr("value", "polish_trends");
+        if (document.documentURI == "https://scratch.mit.edu/explore/projects/all/" || document.documentURI == "https://scratch.mit.edu/explore/projects/all") window.history.pushState({}, '', 'https://scratch.mit.edu/explore/projects/all?polish_trends');
 
-    options.append('<option value="polish_trends">Polskie trendy</option>')
-    options.on("change", replace_projects)
+    }
 
-}
+    else if (lang == "pl" && category == "Wszystko") {
+
+        $(".sort-mode #frc-sort-1088 option[value='trending']").text("Globalne trendy");
+        options.append('<option value="polish_trends">Polskie trendy</option>')
+
+        
+    }
+
+    
+    if (document.documentURI.split("?")[1].includes("polish_trends") ) replace_projects()
+    options.on("change", ()=> {window.location.replace("https://scratch.mit.edu/explore/projects/all?polish_trends")})
+
+    if (value.default =="on") $('a[href|="/explore/projects/all"]').attr("href", "/explore/projects/all?polish_trends");
+    else $('a[href|="/explore/projects/all?polish_trends"]').attr("href", "/explore/projects/all");
+
+})
+
+

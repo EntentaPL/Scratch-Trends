@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="switch.js" type="module"></script>
+
+    <title>Scratch Trends</title>
+</head>
+<body>
+    
+    <div class="update" id="update_box" style="display:none;">
+        <span><sup>●</sup>&nbsp Dostępna jest aktualizacja rozszerzenia</span>
+    </div>
+
+    <img src="../extension/favicon.jpg" class="icon">
+    <h1 class="h1">Scratch <span class="h1" style="color:#ffb319;">Trends</span></h1>
+
+    <div class="toggler" id="default_trends">
+
+        <div class="toggle" id="toggle_dfl_trends">
+            <div class="turner dfl_trends_off" id="switcher_dfl_trends"></div>
+        </div>
+        <div class="switch"><span title="Włącz tę opcję, aby polskie trendy pojawiały się domyślnie zamiast globalnych">Polskie trendy domyślne</span></div>
+
+    </div>
+
+    <br>
+    <div class="toggler" id="force_pltrends">
+
+        <div class="toggle" id="toggle_pltrends">
+            <div class="turner pl_trends_off" id="switcher_pl_trends"></div>
+        </div>
+        <div class="switch"><span title="Włącz tę opcję, aby globalne trendy były całkowicie zastąpione przez polskie">Tylko polskie trendy</span></div>
+
+    </div>
+
+
+    <footer class="github" id="github">
+
+        <span class="fa fa-github" style="color:#ffffff;font-size:25px;vertical-align: middle;"></span>
+        <span class="github_link">&nbsp Lista zmian &nbsp</span>
+        <span class="fa fa-external-link" style="color:#ffffff;"></span>
+
+    </footer>
+
+</body>
+</html>

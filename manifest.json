@@ -2,18 +2,16 @@
   "manifest_version": 3,
   "name": "Scratch Trends",
   "description": "Rozszerzenie przywracające polskie trendy na stronę Scratch",
-  "version": "1.0",
+  "host_permissions": ["<all_urls>"],
+  "version": "2.0",
   "icons": {
-    "16": "extension/favicon.jpg",
-    "32": "extension/favicon.jpg",
-    "48": "extension/favicon.jpg",
-    "128": "extension/favicon.jpg"
+    "512": "extension/favicon.jpg"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://scratch.mit.edu/explore/projects",
-        "https://scratch.mit.edu/explore/projects/*"
+        "https://scratch.mit.edu/",
+        "https://scratch.mit.edu/*"
       ],
       "js": [
         "modules/jquery.min.js",
@@ -24,7 +22,14 @@
   ],
   "permissions": [
     "storage",
-    "activeTab"
-  ]
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+
+  "action" : {
+    "default_popup" : "html/index.html",
+    "default" : "Scratch Trends"
+  }
   
 }

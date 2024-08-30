@@ -6,7 +6,9 @@
 ###### Ta sekcja dotyczy również przeglądarek opartych na silniku Chromium (np. Microsoft Edge)
 
 
-### 1. Pobierz rozszerzenie z Github
+
+### 1. Instalacja manualna
+#### Pobierz rozszerzenie z Github
 
 Na początku musiz pobrać rozszerzenie z oficjalnej strony na Github. Jeśli masz zainstalowany program **GIT** to niezależnie od systemu operacyjnego uruchom konsolę (wiersz poleceń/terminal) i wprowadź następujące polecenie:
 
@@ -17,17 +19,17 @@ git clone "https://github.com/EntentaPL/Scratch-Trends.git"
 Alternatywnie, jeśli nie posiadasz programu **GIT** , spróbuj wprowadzić takie polecenia do konsoli:
 
 ```powershell
-curl -Lo trends.tar.gz "https://github.com/EntentaPL/Scratch-Trends/archive/beta.2.tar.gz"
+curl -Lo trends.tar.gz "https://github.com/EntentaPL/Scratch-Trends/archive/2.0.release.tar.gz"
 tar -xf trends.tar.gz
 ```
 
-Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio ze strony Github. <a href="https://github.com/EntentaPL/Scratch-Trends/archive/refs/heads/beta.2.zip">Kliknij w ten link</a>, aby pobrać rozszerzenie jako plik **.zip** , a następnie korzystając z lokalnych programów (np. 7-ZIP) rozpakuj te archwium.
+Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio ze strony Github. <a href="https://github.com/EntentaPL/Scratch-Trends/archive/refs/heads/2.0.release.zip">Kliknij w ten link</a>, aby pobrać rozszerzenie jako plik **.zip** , a następnie korzystając z lokalnych programów (np. 7-ZIP) rozpakuj te archwium.
 
-### 2. Zainstaluj rozszerzenie
+#### Zainstaluj rozszerzenie
 
 1. Kiedy już pobrałeś rozszerzenie i posiadasz uzyskany katalog, możesz przejść do instacji rozszerznia. W tym celu otwórz stronę do zarządzania rozszerzeniami [chrome://extensions](chrome://extensions)
 
-<img src="docs/extensions.png" width=100% height=100% style="margin:10px">
+<img src="docs/extensions.png" width=100% height=100%>
 
 2. Następnie aktywuj **Tryb dewelopera** - przycisk znajduje się w prawym górnym rogu.
 
@@ -37,7 +39,6 @@ Jeżeli jednak obawiasz się konsoli możesz pobrać rozszerzenie bezpośrednio 
 
 5. Powinieneś teraz zobaczyć nowe pole z tytułem "Scratch Trends". To oznacza, że rozszerzenie zostało zainstalowane pomyślnie.
 
-<br>
 
 ## Firefox
 
